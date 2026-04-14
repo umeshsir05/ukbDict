@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>📖English-Hindi Dictionary</title>
+    <title>📖 अंग्रेजी-हिंदी डिक्शनरी | English-Hindi Dictionary</title>
     <style>
         * {
             margin: 0;
@@ -342,13 +342,13 @@
     <div class="container">
         <h1>
             <span>📖</span> 
-            <span>English-Hindi Dictionary</span>
+            <span>अंग्रेजी-हिंदी डिक्शनरी</span>
             <span>🇮🇳</span>
         </h1>
         <div class="subtitle">English-Hindi Dictionary with Pronunciation</div>
 
         <div class="search-box">
-            <input type="text" id="wordInput" placeholder="Enter English word..." autocomplete="off">
+            <input type="text" id="wordInput" placeholder="Enter English word... (e.g., happiness, computer)" autocomplete="off">
             <button id="searchBtn">🔍 Search</button>
         </div>
 
@@ -640,14 +640,11 @@
             if (e.key === 'Enter') searchWord();
         });
         
-        // Auto-focus and example search
+        // Focus on input but keep it EMPTY (no auto-filled word)
         wordInput.focus();
         
-        // Demo word on load
-        setTimeout(() => {
-            wordInput.value = 'happiness';
-            searchWord();
-        }, 500);
+        // REMOVED the auto-search timeout - text box is now completely empty on load
+        // No example word is pre-filled or auto-searched
     </script>
 </body>
 </html>
