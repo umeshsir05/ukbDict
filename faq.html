@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VIGRID | FAQ – Frequently Asked Questions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* FAQ page specific styles */
+        .faq-hero {
+            text-align: center;
+            padding: 40px 0 20px;
+        }
+        .faq-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e3a1e;
+            margin-bottom: 8px;
+        }
+        .faq-hero p {
+            font-size: 1.1rem;
+            color: #2c4727;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            border: 1px solid #e8f0e2;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+        .faq-item:hover {
+            transform: translateY(-4px);
+            border-color: #eab308;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #1e3a1e;
+        }
+        .faq-question i {
+            font-size: 1.2rem;
+            color: #eab308;
+            transition: 0.2s;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            font-size: 0.95rem;
+            color: #3a5a36;
+            line-height: 1.5;
+            margin-top: 0;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            margin-top: 16px;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        .contact-cta {
+            background: #eaf4e4;
+            border-radius: 48px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .contact-cta h3 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 700px) {
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <div class="logo-section">
+                <img src="logo.png" alt="VIGRID Logo" class="logo-image">
+            </div>
+            <span>VIGRID</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="about.html" data-i18n="nav_about">About Us</a>
+            <a href="products.html" data-i18n="nav_products">Products</a>
+            <a href="impact.html" data-i18n="nav_impact">Impact</a>
+            <a href="faq.html" class="active" data-i18n="nav_faq">FAQ</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <div class="mobile-lang-switch" id="mobileLangSwitch">
+                <i class="fas fa-globe"></i>
+                <span id="mobileLangText">हिंदी</span>
+            </div>
+        </div>
+        <button id="langToggleBtn" class="lang-switch desktop-only" aria-label="Switch Language">
+            <i class="fas fa-globe"></i>
+            <span id="langToggleText">हिंदी</span>
+        </button>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="faq-hero">
+            <h1 data-i18n="faq_heading">FREQUENTLY ASKED QUESTIONS</h1>
+            <p data-i18n="faq_sub">Find answers to common questions about VIGRID solar home kits.</p>
+        </div>
+
+        <div class="faq-grid" id="faqGrid">
+            <!-- FAQ items will be populated dynamically via JS (bilingual) -->
+        </div>
+
+        <div class="contact-cta">
+            <h3 data-i18n="faq_cta_title">Still have questions?</h3>
+            <p data-i18n="faq_cta_desc">We’re here to help you bring light to your home.</p>
+            <a href="contact.html" class="btn-primary" data-i18n="faq_cta_btn">CONTACT US</a>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 data-i18n="footer_quick">QUICK LINKS</h4>
+                <a href="index.html" data-i18n="footer_home">Home</a>
+                <a href="about.html" data-i18n="footer_about">About Us</a>
+                <a href="products.html" data-i18n="footer_products">Products</a>
+                <a href="impact.html" data-i18n="footer_impact">Impact</a>
+                <a href="faq.html" data-i18n="footer_faq">FAQ</a>
+                <a href="contact.html" data-i18n="footer_contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_reg">REGISTRATION</h4>
+                <p data-i18n="footer_reg_label">UDYAM REGISTRATION NUMBER</p>
+                <p class="reg-number"><i class="fas fa-id-card"></i> UDYAM-BR-26-0001234</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+                <div style="margin-top: 24px;">
+                    <i class="fas fa-solar-panel" style="font-size: 2rem; color: #eab308;"></i>
+                    <p style="margin-top: 8px; font-weight: 600;">VIGRID</p>
+                    <small data-i18n="footer_tagline">Light Today, Bright Future.</small>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_newsletter">NEWSLETTER</h4>
+                <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
+                <div class="newsletter-form">
+                    <input type="email" id="footerNewsEmail" placeholder="Enter your email">
+                    <button id="footerNewsBtn" data-i18n="subscribe_btn">SUBSCRIBE</button>
+                </div>
+                <p id="footerNewsFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="faq-script.js"></script>
+</body>
+</html>
