@@ -642,13 +642,17 @@ button, .btn-primary, .btn-outline { cursor: pointer; }
         max-height: 100px;
     }
 }
-/* Active menu link styling */
-.nav-links a.active {
-    color: #1e3a1e !important;         /* dark green */
-    border-bottom: 2px solid #1e3a1e;  /* dark green underline */
-    font-weight: 600;
-}
-/* Ensure the underline stays even on hover */
-.nav-links a.active:hover {
-    border-bottom-color: #1e3a1e;
-}
+
+// Active menu highlight – sirf current page wale link par active class
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.nav-links a');
+
+navLinks.forEach(link => {
+    // Pehle saari active classes hata do
+    link.classList.remove('active');
+    const href = link.getAttribute('href');
+    // Agar href current page se match kare to active add karo
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
