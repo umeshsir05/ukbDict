@@ -516,7 +516,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px;
-    background: #0f2c0d;
+    background: #fffff;
     border-radius: 48px;
     padding: 40px 32px;
     margin: 40px 0;
