@@ -33,7 +33,7 @@ const translations = {
         discover_btn: "DISCOVER OUR KIT",
         plug_play: "Plug & Play Solar Home System",
         // Impact Stats
-        impact_title: "OUR IMPACT",
+        impact_title: "OUR TARGET",
         stat1: "Villages Electrified",
         stat2: "Families Empowered",
         stat3: "Tons of CO₂ Saved",
@@ -83,7 +83,7 @@ const translations = {
         kit_safety: "सेफ्टी अलार्म",
         discover_btn: "हमारी किट देखें",
         plug_play: "प्लग एंड प्ले सोलर होम सिस्टम",
-        impact_title: "हमारा प्रभाव",
+        impact_title: "हमारा लक्ष्य",
         stat1: "गाँव विद्युतीकृत",
         stat2: "परिवार सशक्त",
         stat3: "टन CO₂ बचत",
