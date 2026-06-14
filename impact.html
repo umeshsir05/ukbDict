@@ -340,7 +340,106 @@
 }
     
 
-
+/* Combined Vision + Where/Expansion - two columns in one row */
+.vision-expansion-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+    align-items: start;
+}
+.vision-box {
+    background: #fef5e7;
+    border-radius: 32px;
+    padding: 32px;
+    text-align: center;
+}
+.vision-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.vision-item {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.vision-item strong {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #eab308;
+    display: block;
+}
+.vision-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 16px;
+    color: #2c4727;
+}
+.right-impact-expansion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: #fafdf5;
+    border-radius: 32px;
+    padding: 24px;
+}
+.impact-list, .expansion-list {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.impact-list h3, .expansion-list h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #eab308;
+}
+.impact-list ul, .expansion-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+.impact-list li, .expansion-list li {
+    margin-bottom: 12px;
+    padding-left: 0;
+}
+.impact-list li strong {
+    display: block;
+    font-weight: 700;
+    color: #1e3a1e;
+}
+.impact-list li span {
+    font-size: 0.9rem;
+    color: #2c4727;
+}
+.expansion-list li {
+    padding-left: 20px;
+    position: relative;
+}
+.expansion-list li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+}
+.expansion-note {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 16px;
+    color: #2c5e2a;
+}
+@media (max-width: 900px) {
+    .vision-expansion-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .right-impact-expansion {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
         
     </style>
 </head>
@@ -574,38 +673,54 @@
     </div>
 </div>
 
-        <!-- VIGRID 2030 Vision -->
-        <div class="vision-box">
-            <h3 data-i18n="vision_title">VIGRID 2030 VISION</h3>
-            <div class="vision-stats">
-                <div class="vision-item" data-i18n="vision1">1,00,000+ Homes to be empowered</div>
-                <div class="vision-item" data-i18n="vision2">Multiple States across India</div>
-                <div class="vision-item" data-i18n="vision3">Better Education for every child</div>
-                <div class="vision-item" data-i18n="vision4">Solar First Adoption movement</div>
+        <!-- Combined Section: Vision (left) + Where/Expansion (right) -->
+<div class="vision-expansion-row">
+    <!-- Left Column: VIGRID 2030 VISION -->
+    <div class="vision-box">
+        <h3 data-i18n="vision_title">VIGRID 2030 VISION</h3>
+        <div class="vision-stats">
+            <div class="vision-item">
+                <strong data-i18n="vision1_homes">1,00,000+</strong><br>
+                <span data-i18n="vision1_label">Homes to be empowered</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision2_states">Multiple</strong><br>
+                <span data-i18n="vision2_label">States across India</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision3_edu">Better</strong><br>
+                <span data-i18n="vision3_label">Education for every child</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision4_solar">Solar First</strong><br>
+                <span data-i18n="vision4_label">Adoption movement</span>
             </div>
         </div>
+        <p class="vision-quote" data-i18n="vision_quote">Our vision is to bring solar energy to every rural home and build a self-reliant, sustainable India.</p>
+    </div>
 
-        <!-- Where We Are Making an Impact + Expansion Plan -->
-        <div class="two-col-impact">
-            <div class="impact-list">
-                <h3 data-i18n="where_title">WHERE WE ARE MAKING AN IMPACT</h3>
-                <ul>
-                    <li data-i18n="where1">Chhattisgarh – Reaching deep rural areas</li>
-                    <li data-i18n="where2">Odisha – Empowering tribal communities</li>
-                    <li data-i18n="where3">Jharkhand – Bringing light to villages without electricity</li>
-                </ul>
-            </div>
-            <div class="impact-list">
-                <h3 data-i18n="expansion_title">OUR EXPANSION PLAN</h3>
-                <ul>
-                    <li data-i18n="exp1">More Villages</li>
-                    <li data-i18n="exp2">More Families</li>
-                    <li data-i18n="exp3">More Livelihoods</li>
-                    <li data-i18n="exp4">More Impact</li>
-                    <li data-i18n="exp5">Expanding every year to reach more people.</li>
-                </ul>
-            </div>
+    <!-- Right Column: Where We Are Making an Impact + Expansion Plan (two sub‑columns) -->
+    <div class="right-impact-expansion">
+        <div class="impact-list">
+            <h3 data-i18n="where_title">WHERE WE ARE MAKING AN IMPACT</h3>
+            <ul>
+                <li><strong data-i18n="where1_title">Chhattisgarh</strong><br><span data-i18n="where1_desc">– Reaching deep rural areas</span></li>
+                <li><strong data-i18n="where2_title">Odisha</strong><br><span data-i18n="where2_desc">– Empowering tribal communities</span></li>
+                <li><strong data-i18n="where3_title">Jharkhand</strong><br><span data-i18n="where3_desc">– Bringing light to villages without electricity</span></li>
+            </ul>
         </div>
+        <div class="expansion-list">
+            <h3 data-i18n="expansion_title">OUR EXPANSION PLAN</h3>
+            <ul>
+                <li data-i18n="exp1">More Villages</li>
+                <li data-i18n="exp2">More Families</li>
+                <li data-i18n="exp3">More Livelihoods</li>
+                <li data-i18n="exp4">More Impact</li>
+            </ul>
+            <p class="expansion-note" data-i18n="exp5">Expanding every year to reach more people.</p>
+        </div>
+    </div>
+</div>
 
         <!-- Impact Journey Timeline -->
         <h2 class="section-title" data-i18n="journey_title">OUR IMPACT JOURNEY</h2>
