@@ -56,6 +56,8 @@ kit_icon_multipurpose: "Multipurpose Board",
         newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
         subscribe_btn: "SUBSCRIBE",
         copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+nav_faq: "FAQ",
+footer_faq: "FAQ",
     },
 
     hi: {
