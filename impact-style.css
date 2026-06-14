@@ -550,14 +550,23 @@
 .action-btn i {
     font-size: 1.2rem;
 }
+
+
 .contact-btn {
-    background: #eab308;
-    color: #1e3a1e;
+    background: #2c5e2a;        /* dark green background */
+    color: white;               /* white text */
+    border: none;
+}
+.contact-btn i {
+    color: white;               /* white icon */
 }
 .contact-btn:hover {
-    background: #facc15;
+    background: #1e4a1e;        /* darker green on hover */
     transform: translateY(-2px);
 }
+
+
+
 .partner-btn {
     background: transparent;
     border: 2px solid #eab308;
