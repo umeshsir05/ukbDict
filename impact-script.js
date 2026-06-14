@@ -4,7 +4,7 @@ const impactTranslations = {
         // Navigation
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_impact: "Impact", nav_faq: "FAQ", nav_contact: "Contact",
         // Hero section
-        impact_heading: "OUR TARGET", impact_tagline: "Lighting Homes. Transforming Lives.",
+        impact_heading: "OUR IMPACT", impact_tagline: "Lighting Homes. Transforming Lives.",
         impact_desc: "VIGRID is more than a product – it’s a movement to bring clean energy, education, and better lives to every rural home in India.",
         see_journey: "SEE OUR JOURNEY",
         // Stats grid
@@ -40,7 +40,7 @@ const impactTranslations = {
         // Navigation
         nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_faq: "अक्सर पूछे जाने वाले प्रश्न", nav_contact: "संपर्क करें",
         // Hero
-        impact_heading: "हमारा लक्ष्य", impact_tagline: "घरों को रोशन करना। जीवन बदलना।",
+        impact_heading: "हमारा प्रभाव", impact_tagline: "घरों को रोशन करना। जीवन बदलना।",
         impact_desc: "विग्रिड सिर्फ एक उत्पाद नहीं है – यह एक आंदोलन है जो हर ग्रामीण घर में स्वच्छ ऊर्जा, शिक्षा और बेहतर जीवन लाने के लिए है।",
         see_journey: "हमारी यात्रा देखें",
         // Stats
