@@ -1,25 +1,19 @@
-// Bilingual dictionary: English (default) and Hindi
+// Translations for Homepage (English + Hindi)
 const translations = {
-
     en: {
-kit_icon_solar: "Solar Power",
-kit_icon_mobile: "Mobile Charging",
-kit_icon_fanlight: "Fan + Light",
-kit_icon_led: "LED Lights",
-kit_icon_speaker: "Bluetooth Speaker",
-kit_icon_emergency: "Emergency Light",
-kit_icon_multipurpose: "Multipurpose Board",
-
+        // Navigation
         nav_home: "Home",
         nav_about: "About Us",
         nav_products: "Products",
         nav_contact: "Contact",
-        lang_switch: "हिंदी",
+        // Hero
         hero_highlight: "Light Today",
         hero_future: ", Bright Future.",
         hero_desc: "We provide innovative and sustainable solar solutions that empower rural families and build a brighter tomorrow.",
         explore_btn: "EXPLORE MORE",
         kit_badge: "7-in-1 Solar Home Kit for Rural India",
+        hero_energy: "⚡ Clean Energy for Every Home",
+        // Features (Pillars)
         pillar1_title: "INNOVATION",
         pillar1_desc: "Creative solutions for a better tomorrow.",
         pillar2_title: "RELIABILITY",
@@ -28,6 +22,7 @@ kit_icon_multipurpose: "Multipurpose Board",
         pillar3_desc: "Together, we build stronger futures.",
         pillar4_title: "SUSTAINABILITY",
         pillar4_desc: "Committed to a cleaner, brighter future.",
+        // One Kit
         onekit_title: "ONE KIT, COMPLETE SOLUTION",
         onekit_sub: "Lighting, charging, fan, entertainment and safety – everything in one solar kit.",
         kit_led: "LED Lights",
@@ -37,13 +32,16 @@ kit_icon_multipurpose: "Multipurpose Board",
         kit_safety: "Safety Alarm",
         discover_btn: "DISCOVER OUR KIT",
         plug_play: "Plug & Play Solar Home System",
+        // Impact Stats
         impact_title: "OUR IMPACT",
         stat1: "Villages Electrified",
         stat2: "Families Empowered",
         stat3: "Tons of CO₂ Saved",
         stat4: "Children’s Education Supported",
+        // Founder Quote
         founder_quote: "“Seeing the power problems in villages, I dreamed of a solution that brings light, safety and happiness to every home. That’s how VIGRID was born.”",
         founder_name: "— VIVEK KUMAR, Founder, VIGRID",
+        // Footer
         footer_quick: "QUICK LINKS",
         footer_home: "Home",
         footer_about: "About Us",
@@ -56,29 +54,18 @@ kit_icon_multipurpose: "Multipurpose Board",
         newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
         subscribe_btn: "SUBSCRIBE",
         copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
-nav_faq: "FAQ",
-footer_faq: "FAQ",
     },
-
     hi: {
-kit_icon_solar: "सोलर पॉवर",
-kit_icon_mobile: "मोबाइल चार्जिंग",
-kit_icon_fanlight: "पंखा + लाइट",
-kit_icon_led: "एलईडी लाइटें",
-kit_icon_speaker: "ब्लूटूथ स्पीकर",
-kit_icon_emergency: "इमरजेंसी लाइट",
-kit_icon_multipurpose: "मल्टीपर्पस बोर्ड",
-
         nav_home: "होम",
         nav_about: "हमारे बारे में",
         nav_products: "उत्पाद",
         nav_contact: "संपर्क करें",
-        lang_switch: "English",
         hero_highlight: "आज रोशनी",
         hero_future: ", उज्ज्वल भविष्य।",
         hero_desc: "हम नवीन और टिकाऊ सौर समाधान प्रदान करते हैं जो ग्रामीण परिवारों को सशक्त बनाते हैं और एक उज्जवल कल का निर्माण करते हैं।",
         explore_btn: "और जानें",
         kit_badge: "ग्रामीण भारत के लिए 7-इन-1 सोलर होम किट",
+        hero_energy: "⚡ हर घर के लिए स्वच्छ ऊर्जा",
         pillar1_title: "नवाचार",
         pillar1_desc: "बेहतर कल के लिए रचनात्मक समाधान।",
         pillar2_title: "विश्वसनीयता",
@@ -112,48 +99,50 @@ kit_icon_multipurpose: "मल्टीपर्पस बोर्ड",
         footer_reg_label: "लोव्याम पंजीकरण संख्या",
         footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
         footer_newsletter: "न्यूज़लेटर",
-        newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार पाने के लिए सदस्यता लें।",
+        newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
         subscribe_btn: "सदस्यता लें",
         copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
-
-nav_faq: "अक्सर पूछे जाने वाले प्रश्न",
-footer_faq: "अक्सर पूछे जाने वाले प्रश्न",
     }
 };
 
 let currentLang = 'en';
 
 function updateLanguage(lang) {
+    // Update all elements with data-i18n attribute
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
+            // If element contains only text (no child elements), simply update textContent
             if (el.children.length === 0) {
                 el.textContent = translations[lang][key];
             } else {
-                const spanInside = el.querySelector('span:not([data-i18n])');
-                if (spanInside && el.querySelector('i')) {
-                    spanInside.textContent = translations[lang][key];
+                // For elements that may contain icons, find the text node
+                const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
+                if (textNode) {
+                    textNode.textContent = translations[lang][key];
                 } else {
-                    const icon = el.querySelector('i');
-                    if (icon) {
-                        const textNode = Array.from(el.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
-                        if (textNode) textNode.textContent = translations[lang][key];
-                        else {
-                            el.appendChild(document.createTextNode(translations[lang][key]));
-                        }
-                    } else {
-                        el.textContent = translations[lang][key];
-                    }
+                    // Fallback: replace innerHTML but keep icons? Better to avoid.
+                    el.innerHTML = translations[lang][key];
                 }
             }
         }
     });
+    
+    // Update language toggle button texts (desktop and mobile)
     const langToggleSpan = document.getElementById('langToggleText');
-    if (langToggleSpan) langToggleSpan.textContent = lang === 'en' ? 'हिंदी' : 'English';
-    const mobileLangText = document.getElementById('mobileLangText');
-    if (mobileLangText) mobileLangText.textContent = translations[lang]['lang_switch'];
-    const emailInput = document.getElementById('newsletterEmail');
-    if (emailInput) emailInput.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
+    const mobileLangSpan = document.getElementById('mobileLangText');
+    if (langToggleSpan) {
+        langToggleSpan.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    }
+    if (mobileLangSpan) {
+        mobileLangSpan.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    }
+    
+    // Update newsletter placeholder
+    const newsEmail = document.getElementById('newsletterEmail');
+    if (newsEmail) {
+        newsEmail.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
+    }
 }
 
 function toggleLanguage() {
@@ -163,15 +152,20 @@ function toggleLanguage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Load saved language preference
     const savedLang = localStorage.getItem('vigrid_lang');
-    if (savedLang && (savedLang === 'en' || savedLang === 'hi')) currentLang = savedLang;
+    if (savedLang && (savedLang === 'en' || savedLang === 'hi')) {
+        currentLang = savedLang;
+    }
     updateLanguage(currentLang);
     
-    const toggleBtn = document.getElementById('langToggleBtn');
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleLanguage);
-    const mobileLangSwitch = document.getElementById('mobileLangSwitch');
-    if (mobileLangSwitch) mobileLangSwitch.addEventListener('click', toggleLanguage);
+    // Language toggle button listeners (desktop and mobile)
+    const desktopToggle = document.getElementById('langToggleBtn');
+    const mobileToggle = document.getElementById('mobileLangSwitch');
+    if (desktopToggle) desktopToggle.addEventListener('click', toggleLanguage);
+    if (mobileToggle) mobileToggle.addEventListener('click', toggleLanguage);
     
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {
@@ -179,33 +173,41 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             navLinks.classList.toggle('active');
             const icon = menuToggle.querySelector('i');
-            if (navLinks.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+            if (icon) {
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
+        // Close menu when clicking outside
         document.addEventListener('click', (event) => {
-            if (!navLinks.contains(event.target) && !menuToggle.contains(event.target) && navLinks.classList.contains('active')) {
+            if (navLinks.classList.contains('active') && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
                 navLinks.classList.remove('active');
                 const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
             }
         });
-        const closeMenu = () => {
-            navLinks.classList.remove('active');
-            const icon = menuToggle.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        };
-        navLinks.querySelectorAll('a, .mobile-lang-switch').forEach(item => {
-            item.addEventListener('click', closeMenu);
+        // Close menu after clicking a link
+        navLinks.querySelectorAll('a, .mobile-lang-switch').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
         });
     }
     
+    // Explore More button
     const exploreBtn = document.getElementById('exploreBtn');
     if (exploreBtn) {
         exploreBtn.addEventListener('click', (e) => {
@@ -214,6 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     }
+    
+    // Discover Kit button
     const discoverBtn = document.getElementById('discoverKitBtn');
     if (discoverBtn) {
         discoverBtn.addEventListener('click', (e) => {
@@ -222,12 +226,13 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     }
-    const subscribeButton = document.getElementById('subscribeBtn');
+    
+    // Newsletter subscription
+    const subscribeBtn = document.getElementById('subscribeBtn');
     const emailInput = document.getElementById('newsletterEmail');
     const feedbackSpan = document.getElementById('subscribeFeedback');
-    function validateEmail(email) { return /^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email); }
-    if (subscribeButton && emailInput) {
-        subscribeButton.addEventListener('click', (e) => {
+    if (subscribeBtn && emailInput) {
+        subscribeBtn.addEventListener('click', (e) => {
             e.preventDefault();
             const email = emailInput.value.trim();
             if (!email) {
@@ -235,7 +240,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 feedbackSpan.innerHTML = `<span style="color:#ffcc80;">${errMsg}</span>`;
                 return;
             }
-            if (!validateEmail(email)) {
+            if (!/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
                 const errMsg = currentLang === 'en' ? '⚠️ Please enter a valid email (e.g., name@example.com).' : '⚠️ कृपया एक वैध ईमेल दर्ज करें (जैसे name@example.com)।';
                 feedbackSpan.innerHTML = `<span style="color:#ffcc80;">${errMsg}</span>`;
                 return;
@@ -246,6 +251,8 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => feedbackSpan.innerHTML = '', 4000);
         });
     }
+    
+    // Social icons and quick links alerts
     const socialIcons = document.querySelectorAll('.copyright i');
     socialIcons.forEach(icon => {
         icon.style.cursor = 'pointer';
@@ -254,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
             alert(msg);
         });
     });
+    
     const quickLinks = document.querySelectorAll('.footer-col a');
     quickLinks.forEach(link => {
         link.addEventListener('click', (e) => {
