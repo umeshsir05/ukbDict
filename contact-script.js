@@ -1,10 +1,10 @@
 // Translations for Contact page (English + Hindi)
 const contactTranslations = {
     en: {
-        nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_impact: "Impact", nav_contact: "Contact",
+        nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_impact: "Impact", nav_faq: "FAQ", nav_contact: "Contact",
         contact_heading: "CONTACT US", contact_tagline: "Let’s bring light, hope and a better future to every rural home.",
         get_in_touch: "Get in Touch",
-        address_title: "Registered Office", address_line1: "VIGRID Solar Pvt. Ltd.", address_line2: "Bilaspur, Chhattisgarh, India - 492001",
+        address_title: "Registered Office", address_line1: "VIGRID Solar Pvt. Ltd.", address_line2: "Raipur, Chhattisgarh, India - 492001",
         phone_title: "Phone", phone_number: "+91 12345 67890",
         email_title: "Email",
         hours_title: "Business Hours", hours: "Mon – Sat: 9:00 AM – 6:00 PM",
@@ -12,16 +12,17 @@ const contactTranslations = {
         full_name: "Full Name", email_address: "Email Address", phone_optional: "Phone Number (Optional)",
         subject: "Subject", message: "Your Message", send_btn: "SEND MESSAGE",
         contact_image_caption: "Together, let’s power every home with clean energy.",
-        footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_contact: "Contact",
+        chat_whatsapp: "Chat with us on WhatsApp",
+        footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_faq: "FAQ", footer_contact: "Contact",
         footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
         footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
         subscribe_btn: "SUBSCRIBE", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
     },
     hi: {
-        nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_contact: "संपर्क करें",
+        nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_faq: "अक्सर पूछे जाने वाले प्रश्न", nav_contact: "संपर्क करें",
         contact_heading: "संपर्क करें", contact_tagline: "आइए, हर ग्रामीण घर में रोशनी, आशा और बेहतर भविष्य लाएँ।",
         get_in_touch: "संपर्क में रहें",
-        address_title: "पंजीकृत कार्यालय", address_line1: "विग्रिड सोलर प्रा. लि.", address_line2: "बिलासपुर, छत्तीसगढ़, भारत - 492001",
+        address_title: "पंजीकृत कार्यालय", address_line1: "विग्रिड सोलर प्रा. लि.", address_line2: "रायपुर, छत्तीसगढ़, भारत - 492001",
         phone_title: "फ़ोन", phone_number: "+91 12345 67890",
         email_title: "ईमेल",
         hours_title: "कार्य समय", hours: "सोम – शनि: सुबह 9:00 – शाम 6:00",
@@ -29,7 +30,8 @@ const contactTranslations = {
         full_name: "पूरा नाम", email_address: "ईमेल पता", phone_optional: "फ़ोन नंबर (वैकल्पिक)",
         subject: "विषय", message: "आपका संदेश", send_btn: "संदेश भेजें",
         contact_image_caption: "आइए, मिलकर हर घर को स्वच्छ ऊर्जा से सशक्त बनाएँ।",
-        footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_contact: "संपर्क करें",
+        chat_whatsapp: "व्हाट्सएप पर चैट करें",
+        footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_faq: "अक्सर पूछे जाने वाले प्रश्न", footer_contact: "संपर्क करें",
         footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
         footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
         subscribe_btn: "सदस्यता लें", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
@@ -51,17 +53,25 @@ function updateContactPage(lang) {
             }
         }
     });
-    document.getElementById('langToggleText').innerText = lang === 'en' ? 'हिंदी' : 'English';
-    document.getElementById('mobileLangText').innerText = lang === 'en' ? 'हिंदी' : 'English';
-    document.querySelectorAll('#footerNewsEmail, .newsletter-form input').forEach(inp => inp.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें');
-    // Update form placeholders (since some inputs don't use data-i18n)
-    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
-        if (el.id === 'fullName') el.placeholder = lang === 'en' ? 'Full Name' : 'पूरा नाम';
-        else if (el.id === 'emailAddress') el.placeholder = lang === 'en' ? 'Email Address' : 'ईमेल पता';
-        else if (el.id === 'phoneNumber') el.placeholder = lang === 'en' ? 'Phone Number (Optional)' : 'फ़ोन नंबर (वैकल्पिक)';
-        else if (el.id === 'subject') el.placeholder = lang === 'en' ? 'Subject' : 'विषय';
-        else if (el.id === 'message') el.placeholder = lang === 'en' ? 'Your Message' : 'आपका संदेश';
-    });
+    // Update toggle buttons
+    const desktopToggle = document.getElementById('langToggleText');
+    const mobileToggle = document.getElementById('mobileLangText');
+    if (desktopToggle) desktopToggle.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    if (mobileToggle) mobileToggle.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    // Update placeholders in form inputs (manual because they don't use data-i18n)
+    const fullName = document.getElementById('fullName');
+    const emailAddress = document.getElementById('emailAddress');
+    const phoneNumber = document.getElementById('phoneNumber');
+    const subject = document.getElementById('subject');
+    const message = document.getElementById('message');
+    if (fullName) fullName.placeholder = lang === 'en' ? 'Full Name' : 'पूरा नाम';
+    if (emailAddress) emailAddress.placeholder = lang === 'en' ? 'Email Address' : 'ईमेल पता';
+    if (phoneNumber) phoneNumber.placeholder = lang === 'en' ? 'Phone Number (Optional)' : 'फ़ोन नंबर (वैकल्पिक)';
+    if (subject) subject.placeholder = lang === 'en' ? 'Subject' : 'विषय';
+    if (message) message.placeholder = lang === 'en' ? 'Your Message' : 'आपका संदेश';
+    // Newsletter placeholder
+    const newsEmail = document.getElementById('footerNewsEmail');
+    if (newsEmail) newsEmail.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
 }
 
 function toggleLang() {
@@ -124,13 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            // Simple demo: show success message
             formFeedback.innerHTML = '<span style="color: #2c5e2a;">✅ ' + (currentLang === 'en' ? 'Thank you! We will get back to you soon.' : 'धन्यवाद! हम जल्द ही आपसे संपर्क करेंगे।') + '</span>';
             contactForm.reset();
-            // Remove any floating labels effect
-            document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(el => {
-                el.value = '';
-            });
             setTimeout(() => formFeedback.innerHTML = '', 5000);
         });
     }
