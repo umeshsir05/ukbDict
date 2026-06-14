@@ -53,7 +53,7 @@ const translations = {
         footer_newsletter: "NEWSLETTER",
         newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
         subscribe_btn: "SUBSCRIBE",
-        copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+        copyright_text: "© 2026 VIGRID. All rights reserved. | Empowering rural India with clean energy"
     },
     hi: {
         nav_home: "होम",
@@ -101,7 +101,7 @@ const translations = {
         footer_newsletter: "न्यूज़लेटर",
         newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
         subscribe_btn: "सदस्यता लें",
-        copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
+        copyright_text: "© 2026 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
     }
 };
 
