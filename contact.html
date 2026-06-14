@@ -10,6 +10,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="contact-style.css">
+    <style>
+        /* Additional inline styles for buttons and links */
+        .whatsapp-contact {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        .info-item a {
+            text-decoration: none;
+            transition: 0.2s;
+            color: #2c4727;
+        }
+        .info-item a:hover {
+            color: #eab308 !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -29,7 +60,7 @@
             <a href="about.html" data-i18n="nav_about">About Us</a>
             <a href="products.html" data-i18n="nav_products">Products</a>
             <a href="impact.html" data-i18n="nav_impact">Impact</a>
-<a href="faq.html" data-i18n="nav_faq">FAQ</a>
+            <a href="faq.html" data-i18n="nav_faq">FAQ</a>
             <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
             <div class="mobile-lang-switch" id="mobileLangSwitch">
                 <i class="fas fa-globe"></i>
@@ -51,7 +82,7 @@
             <p data-i18n="contact_tagline">Let’s bring light, hope and a better future to every rural home.</p>
         </div>
 
-        <!-- Two Column Layout: Contact Info + Form -->
+        <!-- Two Column Layout -->
         <div class="contact-two-col">
             <!-- Left: Contact Information -->
             <div class="contact-info">
@@ -61,22 +92,22 @@
                     <div>
                         <strong data-i18n="address_title">Registered Office</strong><br>
                         <span data-i18n="address_line1">VIGRID Solar Pvt. Ltd.</span><br>
-                        <span data-i18n="address_line2">Bilaspur, Chhattisgarh, India - 492001</span>
+                        <span data-i18n="address_line2">Raipur, Chhattisgarh, India - 492001</span>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
                         <strong data-i18n="phone_title">Phone</strong><br>
-                        <span data-i18n="phone_number">+91 73543 36046</span>
+                        <a href="tel:+911234567890">+91 12345 67890</a>
                     </div>
                 </div>
                 <div class="info-item">
                     <i class="fas fa-envelope"></i>
                     <div>
                         <strong data-i18n="email_title">Email</strong><br>
-                        <span>info@vigrid.com</span><br>
-                        <span>support@vigrid.com</span>
+                        <a href="mailto:info@vigrid.com">info@vigrid.com</a><br>
+                        <a href="mailto:support@vigrid.com">support@vigrid.com</a>
                     </div>
                 </div>
                 <div class="info-item">
@@ -86,12 +117,18 @@
                         <span data-i18n="hours">Mon – Sat: 9:00 AM – 6:00 PM</span>
                     </div>
                 </div>
-                <!-- Social Links (reusing icons from footer) -->
+                <!-- Social Links -->
                 <div class="social-contact">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <!-- WhatsApp Button -->
+                <div class="whatsapp-contact">
+                    <a href="https://wa.me/911234567890?text=Hello%20VIGRID%2C%20I%20want%20to%20know%20more%20about%20your%20solar%20kit." class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> <span data-i18n="chat_whatsapp">Chat with us on WhatsApp</span>
+                    </a>
                 </div>
             </div>
 
@@ -131,7 +168,7 @@
             </div>
         </div>
 
-        <!-- Map / Image Section (reusing an existing image e.g., hut.jpg or kits.jpg) -->
+        <!-- Bottom Image -->
         <div class="contact-image-row">
             <img src="kits.jpg" alt="VIGRID Solar Kit" class="contact-footer-img">
             <p data-i18n="contact_image_caption">Together, let’s power every home with clean energy.</p>
@@ -139,7 +176,6 @@
     </div>
 </main>
 
-<!-- FOOTER (consistent with other pages) -->
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -149,6 +185,7 @@
                 <a href="about.html" data-i18n="footer_about">About Us</a>
                 <a href="products.html" data-i18n="footer_products">Products</a>
                 <a href="impact.html" data-i18n="footer_impact">Impact</a>
+                <a href="faq.html" data-i18n="footer_faq">FAQ</a>
                 <a href="contact.html" data-i18n="footer_contact">Contact</a>
             </div>
             <div class="footer-col">
@@ -173,7 +210,7 @@
             </div>
         </div>
         <div class="copyright">
-            <p data-i18n="copyright_text">© 2026 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
             <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
                 <i class="fab fa-facebook-f"></i>
                 <i class="fab fa-twitter"></i>
