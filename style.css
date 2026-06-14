@@ -114,6 +114,15 @@ body {
     color: #2a4b2a;
     transition: color 0.2s;
 }
+
+
+.nav-links a.active {
+    color: #1e3a1e !important;
+    border-bottom: 2px solid #1e3a1e;
+    font-weight: 600;
+}
+
+
 .nav-links a:hover {
     color: #eab308;
 }
