@@ -16,7 +16,7 @@ const contactTranslations = {
         footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_faq: "FAQ", footer_contact: "Contact",
         footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
         footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
-        subscribe_btn: "SUBSCRIBE", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+        subscribe_btn: "SUBSCRIBE", copyright_text: "© 2026 VIGRID. All rights reserved. | Empowering rural India with clean energy"
     },
     hi: {
         nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_faq: "अक्सर पूछे जाने वाले प्रश्न", nav_contact: "संपर्क करें",
@@ -34,7 +34,7 @@ const contactTranslations = {
         footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_faq: "अक्सर पूछे जाने वाले प्रश्न", footer_contact: "संपर्क करें",
         footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
         footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
-        subscribe_btn: "सदस्यता लें", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
+        subscribe_btn: "सदस्यता लें", copyright_text: "© 2026 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
     }
 };
 
