@@ -98,6 +98,7 @@ const pageTranslations = {
 };
 
 function updatePageText(lang) {
+    // Update all data-i18n elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (pageTranslations[lang] && pageTranslations[lang][key]) {
@@ -109,7 +110,16 @@ function updatePageText(lang) {
             }
         }
     });
-    // Update placeholder for newsletter
+    // Update language toggle button texts (both desktop and mobile)
+    const desktopToggleText = document.getElementById('langToggleText');
+    const mobileToggleText = document.getElementById('mobileLangText');
+    if (desktopToggleText) {
+        desktopToggleText.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    }
+    if (mobileToggleText) {
+        mobileToggleText.innerText = lang === 'en' ? 'हिंदी' : 'English';
+    }
+    // Update newsletter placeholder
     const newsEmail = document.getElementById('footerNewsEmail');
     if (newsEmail) newsEmail.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें';
 }
@@ -127,8 +137,10 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePageText(currentLang);
     buildFAQ();
 
-    document.getElementById('langToggleBtn')?.addEventListener('click', toggleLang);
-    document.getElementById('mobileLangSwitch')?.addEventListener('click', toggleLang);
+    const desktopLangBtn = document.getElementById('langToggleBtn');
+    const mobileLangBtn = document.getElementById('mobileLangSwitch');
+    if (desktopLangBtn) desktopLangBtn.addEventListener('click', toggleLang);
+    if (mobileLangBtn) mobileLangBtn.addEventListener('click', toggleLang);
 
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
