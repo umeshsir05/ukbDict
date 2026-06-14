@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VIGRID | Contact Us – Let's Bring Light Together</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact-style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <div class="logo-section">
+                <img src="logo.png" alt="VIGRID Logo" class="logo-image">
+            </div>
+            <span>VIGRID</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="about.html" data-i18n="nav_about">About Us</a>
+            <a href="products.html" data-i18n="nav_products">Products</a>
+            <a href="impact.html" data-i18n="nav_impact">Impact</a>
+            <a href="contact.html" class="active" data-i18n="nav_contact">Contact</a>
+            <div class="mobile-lang-switch" id="mobileLangSwitch">
+                <i class="fas fa-globe"></i>
+                <span id="mobileLangText">हिंदी</span>
+            </div>
+        </div>
+        <button id="langToggleBtn" class="lang-switch desktop-only" aria-label="Switch Language">
+            <i class="fas fa-globe"></i>
+            <span id="langToggleText">हिंदी</span>
+        </button>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Contact Hero -->
+        <div class="contact-hero">
+            <h1 data-i18n="contact_heading">CONTACT US</h1>
+            <p data-i18n="contact_tagline">Let’s bring light, hope and a better future to every rural home.</p>
+        </div>
+
+        <!-- Two Column Layout: Contact Info + Form -->
+        <div class="contact-two-col">
+            <!-- Left: Contact Information -->
+            <div class="contact-info">
+                <h3 data-i18n="get_in_touch">Get in Touch</h3>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong data-i18n="address_title">Registered Office</strong><br>
+                        <span data-i18n="address_line1">VIGRID Solar Pvt. Ltd.</span><br>
+                        <span data-i18n="address_line2">Raipur, Chhattisgarh, India - 492001</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong data-i18n="phone_title">Phone</strong><br>
+                        <span data-i18n="phone_number">+91 12345 67890</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong data-i18n="email_title">Email</strong><br>
+                        <span>info@vigrid.com</span><br>
+                        <span>support@vigrid.com</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong data-i18n="hours_title">Business Hours</strong><br>
+                        <span data-i18n="hours">Mon – Sat: 9:00 AM – 6:00 PM</span>
+                    </div>
+                </div>
+                <!-- Social Links (reusing icons from footer) -->
+                <div class="social-contact">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Right: Contact Form -->
+            <div class="contact-form-container">
+                <h3 data-i18n="send_message">Send us a Message</h3>
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="fullName" placeholder=" " required>
+                            <label for="fullName" data-i18n="full_name">Full Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="emailAddress" placeholder=" " required>
+                            <label for="emailAddress" data-i18n="email_address">Email Address</label>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" id="phoneNumber" placeholder=" ">
+                            <label for="phoneNumber" data-i18n="phone_optional">Phone Number (Optional)</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="subject" placeholder=" " required>
+                            <label for="subject" data-i18n="subject">Subject</label>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <textarea id="message" rows="5" placeholder=" " required></textarea>
+                        <label for="message" data-i18n="message">Your Message</label>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn-primary submit-btn" data-i18n="send_btn">SEND MESSAGE</button>
+                    </div>
+                </form>
+                <p id="formFeedback" class="form-feedback"></p>
+            </div>
+        </div>
+
+        <!-- Map / Image Section (reusing an existing image e.g., hut.jpg or kits.jpg) -->
+        <div class="contact-image-row">
+            <img src="kits.jpg" alt="VIGRID Solar Kit" class="contact-footer-img">
+            <p data-i18n="contact_image_caption">Together, let’s power every home with clean energy.</p>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER (consistent with other pages) -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 data-i18n="footer_quick">QUICK LINKS</h4>
+                <a href="index.html" data-i18n="footer_home">Home</a>
+                <a href="about.html" data-i18n="footer_about">About Us</a>
+                <a href="products.html" data-i18n="footer_products">Products</a>
+                <a href="impact.html" data-i18n="footer_impact">Impact</a>
+                <a href="contact.html" data-i18n="footer_contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_reg">REGISTRATION</h4>
+                <p data-i18n="footer_reg_label">UDYAM REGISTRATION NUMBER</p>
+                <p class="reg-number"><i class="fas fa-id-card"></i> UDYAM-BR-26-0001234</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+                <div style="margin-top: 24px;">
+                    <i class="fas fa-solar-panel" style="font-size: 2rem; color: #eab308;"></i>
+                    <p style="margin-top: 8px; font-weight: 600;">VIGRID</p>
+                    <small data-i18n="footer_tagline">Light Today, Bright Future.</small>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_newsletter">NEWSLETTER</h4>
+                <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
+                <div class="newsletter-form">
+                    <input type="email" id="footerNewsEmail" placeholder="Enter your email">
+                    <button id="footerNewsBtn" data-i18n="subscribe_btn">SUBSCRIBE</button>
+                </div>
+                <p id="footerNewsFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin-in"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="contact-script.js"></script>
+</body>
+</html>
