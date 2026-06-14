@@ -1,11 +1,11 @@
-
+/*
 /* Active menu link styling */
 .nav-links a.active {
     color: #1e3a1e !important;         /* dark green */
     border-bottom: 2px solid #1e3a1e;  /* dark green underline */
     font-weight: 600;
 }
-
+*/
 
 /* Impact Hero - Two Columns */
 .impact-hero-two-col {
