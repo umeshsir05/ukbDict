@@ -37,6 +37,11 @@ const impactTranslations = {
         footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
         footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
         subscribe_btn: "SUBSCRIBE", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+
+        revolution_text: "Be a part of the solar revolution",
+contact_us_btn: "Contact Us",
+partner_btn: "Partner with us",
+csr_btn: "CSR COLLABORATION",
     },
     hi: {
         nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_contact: "संपर्क करें",
@@ -75,6 +80,11 @@ const impactTranslations = {
         footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
         footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
         subscribe_btn: "सदस्यता लें", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
+
+    revolution_text: "सौर क्रांति का हिस्सा बनें",
+contact_us_btn: "संपर्क करें",
+partner_btn: "हमारे साथ भागीदारी करें",
+csr_btn: "सीएसआर सहयोग",
     }
 };
 
