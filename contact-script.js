@@ -1,3 +1,13 @@
+// Set active class on current page link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
+
 // Translations for Contact page (English + Hindi)
 const contactTranslations = {
     en: {
