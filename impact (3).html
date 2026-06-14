@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>VIGRID | Impact – Lighting Homes, Transforming Lives</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        
+        
+/* Impact Hero - Two Columns */
+.impact-hero-two-col {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    align-items: center;
+    padding: 20px 0 10px;
+}
+.impact-hero-left h3 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1e3a1e;
+    margin-bottom: 8px;
+}
+.impact-hero-left .tagline {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c5e2a;
+    margin-bottom: 16px;
+}
+.impact-hero-left p {
+    font-size: 1.05rem;
+    color: #2c4727;
+    line-height: 1.5;
+    margin-bottom: 24px;
+}
+.impact-hero-right img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    display: block;
+}
+@media (max-width: 800px) {
+    .impact-hero-two-col {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        text-align: center;
+    }
+    .impact-hero-left {
+        text-align: center;
+    }
+}
+
+/* Stats Grid - improved responsive design */
+.stats-grid-impact {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin: 10px 0;
+}
+.stat-card-impact {
+    background: white;
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+}
+.stat-card-impact:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+.stat-card-impact i {
+    font-size: 2rem;
+    color: #2c5e2a;
+    margin-bottom: 12px;
+}
+.stat-number-impact {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c5e2a;
+    margin-bottom: 8px;
+}
+.stat-label-impact {
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: #2a5526;
+    line-height: 1.4;
+}
+@media (max-width: 900px) {
+    .stats-grid-impact {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+@media (max-width: 500px) {
+    .stats-grid-impact {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+/* Before vs After - Force one row on desktop */
+.before-after-complex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;          /* desktop: no wrap */
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 1px 0;
+    background: #fafdf5;
+    border-radius: 2px;
+    padding: 1px;
+}
+
+.before-wrapper, .after-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    background: white;
+    border-radius: 5px;
+    padding: 5px;
+    min-width: 0;               /* allows shrinking */
+}
+
+.before-image img, .after-image img {
+    width: 200px;
+    height: auto;
+    border-radius: 0px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.before-description, .after-description {
+    flex: 1;
+    min-width: 0;
+}
+
+.before-box h3, .after-box h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #1e3a1e;
+}
+
+.before-box ul, .after-box ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.before-box li, .after-box li {
+    padding: 4px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.8rem;
+    color: #2c4727;
+}
+
+.before-box li:before {
+    content: "✗";
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.after-box li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.middle-arrow {
+    font-size: 2.5rem;
+    color: #eab308;
+    font-weight: bold;
+    text-align: center;
+    flex-shrink: 0;
+    min-width: 50px;
+}
+
+/* Tablet & Mobile: stack vertically */
+@media (max-width: 900px) {
+    .before-after-complex {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .middle-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    .before-wrapper, .after-wrapper {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .before-wrapper, .after-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .before-image img, .after-image img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+    .before-box li, .after-box li {
+        text-align: left;
+    }
+}
+
+/* Real Life Impact Stories - 7 parts: 3+4 grid */
+.stories-grid-seven {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+/* Both rows have same flexible wrap behavior */
+.story-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* All cards have same width basis (25% – fits 4 cards, but first row will have 3 cards with empty space) */
+.story-row .story-card-seven {
+    flex: 1 1 calc(25% - 12px);
+    min-width: 220px;
+}
+
+.story-card-seven {
+    background: white;
+    border-radius: 14px;
+    padding: 5px;
+    border: 1px solid #e8f0e2;
+    transition: 0.2s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+}
+.story-card-seven:hover {
+    transform: translateY(-4px);
+    border-color: #eab308;
+}
+ .story-card-seven i {
+    color: #2c5e2a; /* Dark Green */
+}
+.story-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #eab308;
+    padding-bottom: 8px;
+}
+.story-header i {
+    font-size: 1.8rem;
+    color: #eab308;
+}
+.story-header h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1e3a1e;
+}
+.story-body {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.story-body img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+.story-desc {
+    flex: 1;
+}
+.story-desc p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: #2c4727;
+    margin-bottom: 8px;
+}
+.story-name {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #1e3a1e;
+}
+.impact-bullet-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.impact-bullet-list li {
+    padding: 4px 0 4px 20px;
+    position: relative;
+    font-size: 0.8rem;
+    color: #2c4727;
+}
+.impact-bullet-list li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .story-row .story-card-seven {
+        flex: 1 1 calc(50% - 12px);
+    }
+}
+@media (max-width: 600px) {
+    .story-row .story-card-seven {
+        flex: 1 1 100%;
+    }
+    .story-body {
+        flex-direction: column;
+        text-align: center;
+    }
+    .story-body img {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+}
+    
+
+/* Combined Vision + Where/Expansion - two columns in one row */
+.vision-expansion-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+    align-items: start;
+}
+.vision-box {
+    background: #fef5e7;
+    border-radius: 32px;
+    padding: 32px;
+    text-align: center;
+}
+.vision-stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.vision-item {
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.vision-item strong {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #eab308;
+    display: block;
+}
+.vision-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 16px;
+    color: #2c4727;
+}
+.right-impact-expansion {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: #fafdf5;
+    border-radius: 32px;
+    padding: 24px;
+}
+.impact-list, .expansion-list {
+    background: white;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.impact-list h3, .expansion-list h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #eab308;
+}
+.impact-list ul, .expansion-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+.impact-list li, .expansion-list li {
+    margin-bottom: 12px;
+    padding-left: 0;
+}
+.impact-list li strong {
+    display: block;
+    font-weight: 700;
+    color: #1e3a1e;
+}
+.impact-list li span {
+    font-size: 0.9rem;
+    color: #2c4727;
+}
+.expansion-list li {
+    padding-left: 20px;
+    position: relative;
+}
+.expansion-list li:before {
+    content: "✓";
+    color: #2c5e2a;
+    position: absolute;
+    left: 0;
+}
+.expansion-note {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 16px;
+    color: #2c5e2a;
+}
+@media (max-width: 900px) {
+    .vision-expansion-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .right-impact-expansion {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+        .impact-map-img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    display: block;
+}
+        
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <div class="container header-inner">
+        <div class="logo">
+            <div class="logo-section">
+                <img src="logo.png" alt="VIGRID Logo" class="logo-image">
+            </div>
+            <span>VIGRID</span>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" data-i18n="nav_home">Home</a>
+            <a href="about.html" data-i18n="nav_about">About Us</a>
+            <a href="products.html" data-i18n="nav_products">Products</a>
+            <a href="impact.html" class="active" data-i18n="nav_impact">Impact</a>
+            <a href="contact.html" data-i18n="nav_contact">Contact</a>
+            <div class="mobile-lang-switch" id="mobileLangSwitch">
+                <i class="fas fa-globe"></i>
+                <span id="mobileLangText">हिंदी</span>
+            </div>
+        </div>
+        <button id="langToggleBtn" class="lang-switch desktop-only" aria-label="Switch Language">
+            <i class="fas fa-globe"></i>
+            <span id="langToggleText">हिंदी</span>
+        </button>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <!-- Impact Hero -->
+        
+<!-- Impact Hero - Two Columns -->
+<div class="impact-hero-two-col">
+    <div class="impact-hero-left">
+        <h1 data-i18n="impact_heading">OUR IMPACT</h1>
+        <div class="tagline" data-i18n="impact_tagline">Lighting Homes. Transforming Lives.</div>
+        <p data-i18n="impact_desc">VIGRID is more than a product – it’s a movement to bring clean energy, education, and better lives to every rural home in India.</p>
+        <a href="#" class="btn-primary" id="seeJourneyBtn"><span data-i18n="see_journey">SEE OUR JOURNEY</span> →</a>
+    </div>
+    <div class="impact-hero-right">
+        <img src="impact-hero.png" alt="VIGRID Impact" class="impact-hero-img">
+    </div>
+</div>
+        
+        <!-- Stats Grid -->
+<div class="stats-grid-impact">
+    <div class="stat-card-impact">
+        <i class="fas fa-map-marker-alt"></i>
+        <div class="stat-number-impact">250+</div>
+        <div class="stat-label-impact" data-i18n="stat_villages">Villages Reached And counting...</div>
+    </div>
+    <div class="stat-card-impact">
+        <i class="fas fa-users"></i>
+        <div class="stat-number-impact">15,000+</div>
+        <div class="stat-label-impact" data-i18n="stat_families">Families Empowered With clean solar energy</div>
+    </div>
+    <div class="stat-card-impact">
+        <i class="fas fa-child"></i>
+        <div class="stat-number-impact">25,000+</div>
+        <div class="stat-label-impact" data-i18n="stat_children">Children Supported To study and dream bigger</div>
+    </div>
+    <div class="stat-card-impact">
+        <i class="fas fa-leaf"></i>
+        <div class="stat-number-impact">1,200+</div>
+        <div class="stat-label-impact" data-i18n="stat_co2">Tons CO₂ Saved For a greener tomorrow</div>
+    </div>
+</div>
+
+        <!-- Before vs After - One Row Left + Arrow + Right -->
+<div class="before-after-complex">
+    <!-- Left Part: Before (image + description) -->
+    <div class="before-wrapper">
+        <div class="before-image">
+            <img src="img1.png" alt="Before VIGRID">
+        </div>
+        <div class="before-description">
+            <div class="before-box">
+                <h3 data-i18n="before_title">BEFORE VIGRID</h3>
+                <ul>
+                    <li data-i18n="before1">Dark homes</li>
+                    <li data-i18n="before2">No mobile charging</li>
+                    <li data-i18n="before3">Children can’t study at night</li>
+                    <li data-i18n="before4">Power cuts & outages</li>
+                    <li data-i18n="before5">Dependence on candles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Arrow in the middle -->
+    <div class="middle-arrow">➡️</div>
+
+    <!-- Right Part: After (description + image) -->
+    <div class="after-wrapper">
+        <div class="after-description">
+            <div class="after-box">
+                <h3 data-i18n="after_title">AFTER VIGRID</h3>
+                <ul>
+                    <li data-i18n="after1">Bright light in every home</li>
+                    <li data-i18n="after2">Mobile charging anytime</li>
+                    <li data-i18n="after3">Children can study at night</li>
+                    <li data-i18n="after4">Fan & comfort in summer</li>
+                    <li data-i18n="after5">Entertainment & better life</li>
+                </ul>
+            </div>
+        </div>
+        <div class="after-image">
+            <img src="img2.png" alt="After VIGRID">
+        </div>
+    </div>
+</div>
+
+
+        
+<!-- Real Life Impact Stories - 7 parts (3+4) -->
+<h3 class="section-title" data-i18n="stories_title">REAL LIFE IMPACT STORIES</h3>
+<div class="stories-grid-seven">
+    <div class="story-row">
+        <!-- Row 1: 3 stories -->
+        <div class="story-card-seven">
+            <div class="story-header">
+                <h3 data-i18n="story1_title">STUDENT</h3>
+            </div>
+            <div class="story-body">
+                <img src="image1.png" alt="Student Story">
+                <div class="story-desc">
+                    <p data-i18n="story1_quote">“Now I can study at night and focus on my dreams.”</p>
+                    <div class="story-name" data-i18n="story1_name">— Suresh, Class 9<br>Village – Kanker, Chhattisgarh</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                
+                <h3 data-i18n="story2_title">SHOP OWNER</h3>
+            </div>
+            <div class="story-body">
+                <img src="image2.png" alt="Shop Owner Story">
+                <div class="story-desc">
+                    <p data-i18n="story2_quote">“My shop stays open late and I can serve more customers.”</p>
+                    <div class="story-name" data-i18n="story2_name">— Ramesh Sahu<br>Village – Dantewada</div>
+                </div>
+            </div>
+        </div>
+        <div class="story-card-seven">
+            <div class="story-header">
+                <h3 data-i18n="story3_title">FAMILY</h3>
+            </div>
+            <div class="story-body">
+                <img src="image3.png" alt="Family Story">
+                <div class="story-desc">
+                    <p data-i18n="story3_quote">“Even during power cuts, our home stays bright.”</p>
+                    <div class="story-name" data-i18n="story3_name">— Lata & Family<br>Village – Bastar</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="story-row">
+    <!-- EDUCATION IMPACT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            
+            <i class="fas fa-graduation-cap"></i>
+            <h3 data-i18n="story4_title">EDUCATION IMPACT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image4.png" alt="Education Impact">
+            <div class="story-desc">
+                <p data-i18n="education_desc">Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- WOMEN EMPOWERMENT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+          <i class="fas fa-female"></i>
+            <h3 data-i18n="story5_title">WOMEN EMPOWERMENT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image5.png" alt="Women Empowerment">
+            <div class="story-desc">
+                <ul class="impact-bullet-list">
+                    <li data-i18n="women1">Easy lighting for household work</li>
+                    <li data-i18n="women2">Mobile charging for communication</li>
+                    <li data-i18n="women3">Safe and secure homes at night</li>
+                    <li data-i18n="women4">More time for self development</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENVIRONMENT IMPACT -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-leaf"></i>
+            <h3 data-i18n="story6_title">ENVIRONMENT IMPACT</h3>
+        </div>
+        <div class="story-body">
+            <img src="image6.png" alt="Environment Impact">
+            <div class="story-desc">
+                <ul class="impact-bullet-list">
+                    <li data-i18n="env1">100% Clean Energy</li>
+                    <li data-i18n="env2">No Diesel, No Kerosene</li>
+                    <li data-i18n="env3">Less Pollution</li>
+                    <li data-i18n="env4">Reduced Carbon Emission</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- BETTER LIFE FOR ALL -->
+    <div class="story-card-seven">
+        <div class="story-header">
+            <i class="fas fa-people-group"></i>
+            <h3 data-i18n="story7_title">BETTER LIFE FOR ALL</h3>
+        </div>
+        <div class="story-body">
+            <img src="image7.png" alt="Better Life">
+            <div class="story-desc">
+                <p data-i18n="better_life_desc">Better health, better education, better income and a better tomorrow — VIGRID is building stronger rural India.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Combined Section: Vision (left) + Where/Expansion (right) -->
+<div class="vision-expansion-row">
+    <!-- Left Column: VIGRID 2030 VISION -->
+    <div class="vision-box">
+        <h3 data-i18n="vision_title">VIGRID 2030 VISION</h3>
+        <div class="vision-stats">
+            <div class="vision-item">
+                <strong data-i18n="vision1_homes">1,00,000+</strong><br>
+                <span data-i18n="vision1_label">Homes to be empowered</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision2_states">Multiple</strong><br>
+                <span data-i18n="vision2_label">States across India</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision3_edu">Better</strong><br>
+                <span data-i18n="vision3_label">Education for every child</span>
+            </div>
+            <div class="vision-item">
+                <strong data-i18n="vision4_solar">Solar First</strong><br>
+                <span data-i18n="vision4_label">Adoption movement</span>
+            </div>
+        </div>
+        <p class="vision-quote" data-i18n="vision_quote">Our vision is to bring solar energy to every rural home and build a self-reliant, sustainable India.</p>
+    </div>
+
+    <!-- Right Column: Where We Are Making an Impact + Expansion Plan (two sub‑columns) -->
+
+    <div class="right-impact-expansion">
+    <!-- Where We Are Making an Impact (with map image) -->
+    <div class="impact-list">
+           <h3 data-i18n="where_title">WHERE WE ARE MAKING AN IMPACT</h3>
+        <img src="indiamap.png" alt="India Map" class="impact-map-img">
+     
+        <ul>
+            <li><strong data-i18n="where1_title"><i class="fas fa-map-marker-alt"></i>Chhattisgarh</strong><br><span data-i18n="where1_desc">– Reaching deep rural areas</span></li>
+            
+            <li><strong data-i18n="where2_title"><i class="fas fa-map-marker-alt"></i>Odisha</strong><br><span data-i18n="where2_desc">– Empowering tribal communities</span></li>
+            <li><strong data-i18n="where3_title"><i class="fas fa-map-marker-alt"></i>Jharkhand</strong><br><span data-i18n="where3_desc">– Bringing light to villages without electricity</span></li>
+        </ul>
+    </div>
+    <div class="expansion-list">
+        <h3 data-i18n="expansion_title">OUR EXPANSION PLAN</h3>
+        <ul>
+            <li data-i18n="exp1">More Villages</li>
+            <li data-i18n="exp2">More Families</li>
+            <li data-i18n="exp3">More Livelihoods</li>
+            <li data-i18n="exp4">More Impact</li>
+        </ul>
+        <p class="expansion-note" data-i18n="exp5">Expanding every year to reach more people.</p>
+    </div>
+</div>
+
+        <!-- Impact Journey Timeline -->
+        <h2 class="section-title" data-i18n="journey_title">OUR IMPACT JOURNEY</h2>
+        <div class="timeline">
+            <div class="timeline-year"><div class="year">2026</div><div data-i18n="journey1">VIGRID Registration<br>Journey Begins</div></div>
+            <div class="timeline-year"><div class="year">2027</div><div data-i18n="journey2">Pilot Projects in Selected Villages<br>First Impact</div></div>
+            <div class="timeline-year"><div class="year">2028</div><div data-i18n="journey3">1,000+ Homes Powered<br>Strong Foundation</div></div>
+            <div class="timeline-year"><div class="year">2029</div><div data-i18n="journey4">10,000+ Homes Empowered<br>Growing Strong</div></div>
+            <div class="timeline-year"><div class="year">2030</div><div data-i18n="journey5">1,00,000+ Homes Our Big Goal<br>For Rural India</div></div>
+        </div>
+
+        <!-- Be Part of the Solar Revolution -->
+        <div class="impact-single" style="background: #0f2c0d; color: white;">
+            <h3 style="color: #eab308;" data-i18n="revolution_title">BE PART OF THE SOLAR REVOLUTION</h3>
+            <p data-i18n="revolution_desc">Together, let’s bring light, hope and a better future to every rural home.</p>
+            <a href="#" class="btn-primary" id="joinRevolutionBtn" style="background: #eab308; color: #1e3a1e; margin-top: 16px;"><span data-i18n="join_btn">JOIN US</span></a>
+        </div>
+    </div>
+</main>
+
+<!-- FOOTER (similar to other pages) -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 data-i18n="footer_quick">QUICK LINKS</h4>
+                <a href="index.html" data-i18n="footer_home">Home</a>
+                <a href="about.html" data-i18n="footer_about">About Us</a>
+                <a href="products.html" data-i18n="footer_products">Products</a>
+                <a href="impact.html" data-i18n="footer_impact">Impact</a>
+                <a href="contact.html" data-i18n="footer_contact">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_reg">REGISTRATION</h4>
+                <p data-i18n="footer_reg_label">UDYAM REGISTRATION NUMBER</p>
+                <p class="reg-number"><i class="fas fa-id-card"></i> UDYAM-BR-26-0001234</p>
+                <p><i class="fas fa-map-marker-alt"></i> India</p>
+                <div style="margin-top: 24px;">
+                    <i class="fas fa-solar-panel" style="font-size: 2rem; color: #eab308;"></i>
+                    <p style="margin-top: 8px; font-weight: 600;">VIGRID</p>
+                    <small data-i18n="footer_tagline">Light Today, Bright Future.</small>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_newsletter">NEWSLETTER</h4>
+                <p data-i18n="newsletter_desc">Subscribe to get the latest updates and news from VIGRID.</p>
+                <div class="newsletter-form">
+                    <input type="email" id="footerNewsEmail" placeholder="Enter your email">
+                    <button id="footerNewsBtn" data-i18n="subscribe_btn">SUBSCRIBE</button>
+                </div>
+                <p id="footerNewsFeedback" style="margin-top: 12px; font-size: 0.8rem;"></p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p data-i18n="copyright_text">© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy</p>
+            <div style="margin-top: 8px; display: flex; justify-content: center; gap: 20px;">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    
+    <script>
+    // Translations for Impact page (English + Hindi)
+    const impactTranslations = {
+        en: {
+            nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_impact: "Impact", nav_contact: "Contact",
+            impact_heading: "OUR IMPACT", impact_tagline: "Lighting Homes. Transforming Lives.",
+            impact_desc: "VIGRID is more than a product – it’s a movement to bring clean energy, education, and better lives to every rural home in India.",
+            see_journey: "SEE OUR JOURNEY",
+            stat_villages: "Villages Reached<br>And counting...", stat_families: "Families Empowered<br>With clean solar energy",
+            stat_children: "Children Supported<br>To study and dream bigger", stat_co2: "Tons CO₂ Saved<br>For a greener tomorrow",
+            before_title: "BEFORE VIGRID", after_title: "AFTER VIGRID",
+            before1: "Dark homes", before2: "No mobile charging", before3: "Children can’t study at night", before4: "Power cuts & outages", before5: "Dependence on candles",
+            after1: "Bright light in every home", after2: "Mobile charging anytime", after3: "Children can study at night", after4: "Fan & comfort in summer", after5: "Entertainment & better life",
+            stories_title: "REAL LIFE IMPACT STORIES",
+            // First row (3 stories)
+            story1_title: "STUDENT", story1_quote: "“Now I can study at night and focus on my dreams.”", story1_name: "— Suresh, Class 9<br>Village – Kanker, Chhattisgarh",
+            story2_title: "SHOP OWNER", story2_quote: "“My shop stays open late and I can serve more customers.”", story2_name: "— Ramesh Sahu<br>Village – Dantewada",
+            story3_title: "FAMILY", story3_quote: "“Even during power cuts, our home stays bright.”", story3_name: "— Lata & Family<br>Village – Bastar",
+            // Second row (4 stories)
+            story4_title: "EDUCATION IMPACT", education_desc: "Children Can Study At Night – VIGRID brings light so that every child can study, learn and create a better future.",
+            story5_title: "WOMEN EMPOWERMENT",
+            women1: "Easy lighting for household work", women2: "Mobile charging for communication", women3: "Safe and secure homes at night", women4: "More time for self development",
+            story6_title: "ENVIRONMENT IMPACT",
+            env1: "100% Clean Energy", env2: "No Diesel, No Kerosene", env3: "Less Pollution", env4: "Reduced Carbon Emission",
+            story7_title: "BETTER LIFE FOR ALL", better_life_desc: "Better health, better education, better income and a better tomorrow — VIGRID is building stronger rural India.",
+            // Other sections
+            vision_title: "VIGRID 2030 VISION", vision1: "1,00,000+ Homes to be empowered", vision2: "Multiple States across India", vision3: "Better Education for every child", vision4: "Solar First Adoption movement",
+            where_title: "WHERE WE ARE MAKING AN IMPACT", where1: "Chhattisgarh – Reaching deep rural areas", where2: "Odisha – Empowering tribal communities", where3: "Jharkhand – Bringing light to villages without electricity",
+            expansion_title: "OUR EXPANSION PLAN", exp1: "More Villages", exp2: "More Families", exp3: "More Livelihoods", exp4: "More Impact", exp5: "Expanding every year to reach more people.",
+            journey_title: "OUR IMPACT JOURNEY", journey1: "VIGRID Registration<br>Journey Begins", journey2: "Pilot Projects in Selected Villages<br>First Impact", journey3: "1,000+ Homes Powered<br>Strong Foundation", journey4: "10,000+ Homes Empowered<br>Growing Strong", journey5: "1,00,000+ Homes Our Big Goal<br>For Rural India",
+            revolution_title: "BE PART OF THE SOLAR REVOLUTION", revolution_desc: "Together, let’s bring light, hope and a better future to every rural home.", join_btn: "JOIN US",
+            footer_quick: "QUICK LINKS", footer_home: "Home", footer_about: "About Us", footer_products: "Products", footer_impact: "Impact", footer_contact: "Contact",
+            footer_reg: "REGISTRATION", footer_reg_label: "UDYAM REGISTRATION NUMBER", footer_tagline: "Light Today, Bright Future.",
+            footer_newsletter: "NEWSLETTER", newsletter_desc: "Subscribe to get the latest updates and news from VIGRID.",
+            subscribe_btn: "SUBSCRIBE", copyright_text: "© 2024 VIGRID. All rights reserved. | Empowering rural India with clean energy"
+        },
+        hi: {
+            nav_home: "होम", nav_about: "हमारे बारे में", nav_products: "उत्पाद", nav_impact: "प्रभाव", nav_contact: "संपर्क करें",
+            impact_heading: "हमारा प्रभाव", impact_tagline: "घरों को रोशन करना। जीवन बदलना।",
+            impact_desc: "विग्रिड सिर्फ एक उत्पाद नहीं है – यह एक आंदोलन है जो हर ग्रामीण घर में स्वच्छ ऊर्जा, शिक्षा और बेहतर जीवन लाने के लिए है।",
+            see_journey: "हमारी यात्रा देखें",
+            stat_villages: "गाँव पहुँचे<br>और बढ़ते जा रहे", stat_families: "परिवार सशक्त<br>स्वच्छ सौर ऊर्जा से",
+            stat_children: "बच्चे समर्थित<br>पढ़ाई और बड़े सपने देखने के लिए", stat_co2: "टन CO₂ बचत<br>हरित भविष्य के लिए",
+            before_title: "विग्रिड से पहले", after_title: "विग्रिड के बाद",
+            before1: "अंधेरे घर", before2: "मोबाइल चार्जिंग नहीं", before3: "बच्चे रात में पढ़ नहीं सकते", before4: "बिजली कटौती", before5: "मोमबत्तियों पर निर्भरता",
+            after1: "हर घर में रोशनी", after2: "कभी भी मोबाइल चार्जिंग", after3: "बच्चे रात में पढ़ सकते हैं", after4: "गर्मी में पंखा और आराम", after5: "मनोरंजन और बेहतर जीवन",
+            stories_title: "वास्तविक जीवन प्रभाव कहानियाँ",
+            story1_title: "छात्र", story1_quote: "“अब मैं रात में पढ़ सकता हूँ और अपने सपनों पर ध्यान केंद्रित कर सकता हूँ।”", story1_name: "— सुरेश, कक्षा 9<br>गाँव – कांकेर, छत्तीसगढ़",
+            story2_title: "दुकानदार", story2_quote: "“मेरी दुकान देर तक खुली रहती है और मैं अधिक ग्राहकों को सेवा दे सकता हूँ।”", story2_name: "— रमेश साहू<br>गाँव – दंतेवाड़ा",
+            story3_title: "परिवार", story3_quote: "“बिजली कटौती के दौरान भी, हमारा घर रोशन रहता है।”", story3_name: "— लता और परिवार<br>गाँव – बस्तर",
+            story4_title: "शिक्षा प्रभाव", education_desc: "बच्चे रात में पढ़ सकते हैं – विग्रिड रोशनी लाता है ताकि हर बच्चा पढ़ सके, सीख सके और बेहतर भविष्य बना सके।",
+            story5_title: "महिला सशक्तिकरण",
+            women1: "घरेलू कामों के लिए आसान रोशनी", women2: "संचार के लिए मोबाइल चार्जिंग", women3: "रात में सुरक्षित घर", women4: "आत्म विकास के लिए अधिक समय",
+            story6_title: "पर्यावरण प्रभाव",
+            env1: "100% स्वच्छ ऊर्जा", env2: "न डीजल, न मिट्टी का तेल", env3: "कम प्रदूषण", env4: "कम कार्बन उत्सर्जन",
+            story7_title: "सभी के लिए बेहतर जीवन", better_life_desc: "बेहतर स्वास्थ्य, बेहतर शिक्षा, बेहतर आय और एक बेहतर कल — विग्रिड मजबूत ग्रामीण भारत का निर्माण कर रहा है।",
+            vision_title: "विग्रिड 2030 विजन", vision1: "1,00,000+ घर सशक्त होंगे", vision2: "भारत भर के कई राज्य", vision3: "हर बच्चे के लिए बेहतर शिक्षा", vision4: "सोलर फर्स्ट अपनाने का आंदोलन",
+            where_title: "हम कहाँ प्रभाव बना रहे हैं", where1: "छत्तीसगढ़ – गहरे ग्रामीण क्षेत्रों तक पहुँच", where2: "ओडिशा – जनजातीय समुदायों को सशक्त बनाना", where3: "झारखंड – बिना बिजली वाले गाँवों में रोशनी लाना",
+            expansion_title: "हमारी विस्तार योजना", exp1: "अधिक गाँव", exp2: "अधिक परिवार", exp3: "अधिक आजीविका", exp4: "अधिक प्रभाव", exp5: "हर साल अधिक लोगों तक पहुँचने के लिए विस्तार।",
+            journey_title: "हमारी प्रभाव यात्रा", journey1: "विग्रिड पंजीकरण<br>यात्रा शुरू", journey2: "चयनित गाँवों में पायलट परियोजनाएँ<br>पहला प्रभाव", journey3: "1,000+ घर सशक्त<br>मजबूत नींव", journey4: "10,000+ घर सशक्त<br>बढ़ती ताकत", journey5: "1,00,000+ घर हमारा बड़ा लक्ष्य<br>ग्रामीण भारत के लिए",
+            revolution_title: "सौर क्रांति का हिस्सा बनें", revolution_desc: "आइए, मिलकर हर ग्रामीण घर में रोशनी, आशा और बेहतर भविष्य लाएँ।", join_btn: "हमसे जुड़ें",
+            footer_quick: "त्वरित लिंक", footer_home: "होम", footer_about: "हमारे बारे में", footer_products: "उत्पाद", footer_impact: "प्रभाव", footer_contact: "संपर्क करें",
+            footer_reg: "पंजीकरण", footer_reg_label: "उद्यम पंजीकरण संख्या", footer_tagline: "आज रोशनी, उज्ज्वल भविष्य।",
+            footer_newsletter: "न्यूज़लेटर", newsletter_desc: "विग्रिड से नवीनतम अपडेट और समाचार प्राप्त करने के लिए सदस्यता लें।",
+            subscribe_btn: "सदस्यता लें", copyright_text: "© 2024 विग्रिड. सर्वाधिकार सुरक्षित। | स्वच्छ ऊर्जा से ग्रामीण भारत को सशक्त बनाना"
+        }
+    };
+
+    let currentLang = 'en';
+    function updateImpactPage(lang) {
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (impactTranslations[lang] && impactTranslations[lang][key]) {
+                if (el.children.length === 0 || el.tagName === 'BUTTON' || el.tagName === 'INPUT') {
+                    el.textContent = impactTranslations[lang][key];
+                } else {
+                    const textNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
+                    if (textNode) textNode.textContent = impactTranslations[lang][key];
+                    else if (el.tagName === 'LI' || el.tagName === 'DIV') el.innerHTML = impactTranslations[lang][key];
+                }
+            }
+        });
+        document.getElementById('langToggleText').innerText = lang === 'en' ? 'हिंदी' : 'English';
+        document.getElementById('mobileLangText').innerText = lang === 'en' ? 'हिंदी' : 'English';
+        document.querySelectorAll('#footerNewsEmail, .newsletter-form input').forEach(inp => inp.placeholder = lang === 'en' ? 'Enter your email' : 'अपना ईमेल दर्ज करें');
+    }
+
+    function toggleLang() {
+        currentLang = currentLang === 'en' ? 'hi' : 'en';
+        updateImpactPage(currentLang);
+        localStorage.setItem('vigrid_lang_impact', currentLang);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('vigrid_lang_impact');
+        if (saved && (saved === 'en' || saved === 'hi')) currentLang = saved;
+        updateImpactPage(currentLang);
+        document.getElementById('langToggleBtn')?.addEventListener('click', toggleLang);
+        document.getElementById('mobileLangSwitch')?.addEventListener('click', toggleLang);
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                navLinks.classList.toggle('active');
+                const icon = menuToggle.querySelector('i');
+                if (icon) {
+                    if (navLinks.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            document.addEventListener('click', (event) => {
+                if (navLinks.classList.contains('active') && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                }
+            });
+            navLinks.querySelectorAll('a, .mobile-lang-switch').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+            });
+        }
+        document.getElementById('seeJourneyBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? '📖 Discover our journey of bringing light to rural India!' : '📖 ग्रामीण भारत में रोशनी लाने की हमारी यात्रा देखें!');
+        });
+        document.getElementById('joinRevolutionBtn')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert(currentLang === 'en' ? '🤝 Join VIGRID movement – contact us at info@vigrid.com' : '🤝 विग्रिड आंदोलन से जुड़ें – हमसे संपर्क करें info@vigrid.com');
+        });
+        const footerBtn = document.getElementById('footerNewsBtn');
+        const footerEmail = document.getElementById('footerNewsEmail');
+        const footerFeed = document.getElementById('footerNewsFeedback');
+        if (footerBtn && footerEmail) {
+            footerBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = footerEmail.value.trim();
+                if (!email || !/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/.test(email)) {
+                    footerFeed.innerHTML = '<span style="color:#ffcc80;">⚠️ Valid email required</span>';
+                    return;
+                }
+                footerFeed.innerHTML = '<span style="color:#c8e6b5;">✅ Subscribed!</span>';
+                footerEmail.value = '';
+                setTimeout(() => footerFeed.innerHTML = '', 3000);
+            });
+        }
+        document.querySelectorAll('.copyright i').forEach(icon => {
+            icon.style.cursor = 'pointer';
+            icon.addEventListener('click', () => alert('🌍 ' + (currentLang === 'en' ? 'Connect with VIGRID on social media!' : 'सोशल मीडिया पर विग्रिड से जुड़ें!')));
+        });
+    });
+</script>
+    
+              
+
+</body>
+</html>
