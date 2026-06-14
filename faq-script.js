@@ -206,3 +206,13 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.addEventListener('click', () => alert('🌍 ' + (currentLang === 'en' ? 'Connect with VIGRID on social media!' : 'सोशल मीडिया पर विग्रिड से जुड़ें!')));
     });
 });
+
+// Set active class on current page link
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage) {
+        link.classList.add('active');
+    }
+});
