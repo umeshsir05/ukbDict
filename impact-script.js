@@ -1,4 +1,4 @@
-// Set active class on current page link
+/* Set active class on current page link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 const navLinks = document.querySelectorAll('.nav-links a');
 navLinks.forEach(link => {
@@ -7,7 +7,7 @@ navLinks.forEach(link => {
         link.classList.add('active');
     }
 });
-
+*/
 
 // Translations for Impact page (English + Hindi)
 const impactTranslations = {
